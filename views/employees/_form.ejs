@@ -1,0 +1,43 @@
+<form action="<%= action %>" method="POST">
+  <% if (method && method !== 'POST') { %>
+    <input type="hidden" name="_method" value="<%= method %>">
+  <% } %>
+
+  <label>Name</label>
+  <input name="name" value="<%= employee?.name || '' %>" required>
+
+  <label>Email</label>
+  <input name="email" type="email" value="<%= employee?.email || '' %>" required>
+
+  <label>Job Title</label>
+  <input name="jobTitle" value="<%= employee?.jobTitle || '' %>">
+
+  <label>Department</label>
+  <select name="department" required>
+    <% departments.forEach(d=>{ %>
+      <option value="<%= d._id %>" <%= employee?.department && employee.department.equals(d._id) ? 'selected' : '' %>><%= d.name %></option>
+    <% }) %>
+  </select>
+
+  <label>Supervisor</label>
+  <select name="supervisor">
+    <option value="">-- None --</option>
+    <% employeesList.forEach(e=>{ 
+         if (!employee || !employee._id || !employee._id.equals(e._id)) { %>
+      <option value="<%= e._id %>" <%= employee?.supervisor && employee.supervisor.equals(e._id) ? 'selected' : '' %>><%= e.name %></option>
+    <% } }) %>
+  </select>
+
+  <label>Country</label>
+  <select id="country" name="country"></select>
+
+  <label>State</label>
+  <select id="state" name="state"></select>
+
+  <label>City</label>
+  <select id="city" name="city"></select>
+
+  <button type="submit">Save</button>
+</form>
+
+<script src="/js/location-dropdowns.js"></script>

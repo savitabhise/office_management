@@ -1,0 +1,17 @@
+
+<h1 class="text-2xl font-bold mb-4">Edit Department</h1>
+
+<form action="/departments/<%= department._id %>?_method=PUT" method="POST" class="space-y-4">
+  <div>
+    <label class="block">Name</label>
+    <input type="text" name="name" value="<%= department.name %>" required class="border px-2 py-1 w-full">
+  </div>
+
+  <div>
+    <label class="block">Description</label>
+    <textarea name="description" rows="3" class="border px-2 py-1 w-full"><%= department.description %></textarea>
+  </div>
+
+  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+  <a href="/departments" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</a>
+</form>

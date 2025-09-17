@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Office Management</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Tailwind CDN (optional, remove if you’re compiling Tailwind separately) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body class="bg-gray-50 text-gray-900 min-h-screen flex flex-col">
+
+  <!-- Navbar -->
+  <header class="bg-gray-800 text-white shadow">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-xl font-bold"><a href="/">Office Management</a></h1>
+      <nav class="space-x-4">
+        <a href="/employees" class="hover:underline">Employees</a>
+        <a href="/departments" class="hover:underline">Departments</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main content -->
+  <main class="container mx-auto px-4 py-6 flex-1">
+    <%- body %>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-200 text-center py-3 mt-auto">
+    <p class="text-sm text-gray-600">&copy; <%= new Date().getFullYear() %> Office Management</p>
+  </footer>
+
+</body>
+</html>
