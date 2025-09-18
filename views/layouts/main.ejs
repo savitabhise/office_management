@@ -8,6 +8,9 @@
   <!-- Tailwind CDN (optional, remove if you’re compiling Tailwind separately) -->
   <script src="https://cdn.tailwindcss.com"></script>
 
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
   <!-- Custom CSS -->
   <link rel="stylesheet" href="/css/style.css">
 </head>
@@ -34,5 +37,10 @@
     <p class="text-sm text-gray-600">&copy; <%= new Date().getFullYear() %> Office Management</p>
   </footer>
 
+  <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, once: true });
+  </script>
 </body>
 </html>

@@ -1,0 +1,61 @@
+<!-- Hero Section -->
+<section class="h-screen flex flex-col justify-center items-center text-center bg-gradient-to-r from-blue-500 to-purple-600 text-white">
+  <h1 class="text-5xl font-extrabold mb-4" data-aos="fade-up">
+    Welcome to Office Management
+  </h1>
+  <p class="text-lg mb-6 max-w-2xl" data-aos="fade-up" data-aos-delay="200">
+    Manage departments, employees, and operations seamlessly with our modern Office Management System.
+  </p>
+  <a href="/employees" class="bg-white text-blue-600 font-bold px-6 py-3 rounded shadow hover:bg-gray-200 transition" data-aos="fade-up" data-aos-delay="400">
+    Get Started
+  </a>
+</section>
+
+<!-- Services Section -->
+<section class="py-16 bg-gray-50">
+  <div class="container mx-auto px-6">
+    <h2 class="text-3xl font-bold text-center mb-12" data-aos="fade-down">
+      What We Offer
+    </h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in">
+        <h3 class="text-xl font-bold mb-2">Department Management</h3>
+        <p class="text-gray-600">Easily create, edit, and organize departments within your organization.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="200">
+        <h3 class="text-xl font-bold mb-2">Employee Management</h3>
+        <p class="text-gray-600">Track employees, assign supervisors, and manage locations efficiently.</p>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow hover:shadow-lg transition" data-aos="zoom-in" data-aos-delay="400">
+        <h3 class="text-xl font-bold mb-2">Analytics & Reports</h3>
+        <p class="text-gray-600">Get insights into your workforce with structured data and reports.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="py-16 bg-white">
+  <div class="container mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
+    <div class="md:w-1/2" data-aos="fade-right">
+      <img src="https://source.unsplash.com/600x400/?office,team" alt="Office" class="rounded-lg shadow">
+    </div>
+    <div class="md:w-1/2" data-aos="fade-left">
+      <h2 class="text-3xl font-bold mb-4">Why Choose Us?</h2>
+      <p class="text-gray-600 mb-4">
+        Our system is designed to make office management smooth, efficient, and modern. From HR to IT, everyone benefits from a streamlined workflow.
+      </p>
+      <ul class="list-disc ml-6 text-gray-600">
+        <li>Modern UI with animations</li>
+        <li>Secure MongoDB backend</li>
+        <li>Easy CRUD operations</li>
+        <li>Dynamic dropdowns for location</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white py-6 text-center">
+  <p>&copy; <%= new Date().getFullYear() %> Office Management. All rights reserved.</p>
+</footer>

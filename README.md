@@ -8,7 +8,7 @@ It allows management of **Departments** and **Employees** with CRUD operations, 
 ## 📌 Assignment Information
 - **Assignment started on:** 17 September 2025, 9:00 PM (IST)
 - **Tech Stack:** Node.js, Express, MongoDB, Mongoose, EJS, Tailwind CSS
-- **Database:** MongoDB (local / MongoDB Atlas)
+- **Database:** MongoDB (local / MongoDB compass)
 
 ---
 
