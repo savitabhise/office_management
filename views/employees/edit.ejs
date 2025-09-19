@@ -7,8 +7,24 @@
   <div>
     <label class="block mb-2 font-semibold">Name</label>
     <input type="text" name="name" value="<%= employee.name %>" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
+    <input name="email" type="email" value="<%= employee?.email || '' %>" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4">
+    <input name="jobTitle" value="<%= employee?.jobTitle || '' %>" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4">
+    <select name="department" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4">
+      <% departments.forEach(d=>{ %>
+        <option value="<%= d._id %>" <%= employee?.department && employee.department.equals(d._id) ? 'selected' : '' %>><%= d.name %></option>
+      <% }) %>
+    </select>
+    <select name="supervisor">
+      <% employeesList.forEach(e=>{ 
+          if (!employee || !employee._id || !employee._id.equals(e._id)) { %>
+        <option value="<%= e._id %>" <%= employee?.supervisor && employee.supervisor.equals(e._id) ? 'selected' : '' %>><%= e.name %></option>
+      <% } }) %>
+    </select>
+    <select id="country" name="country" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4"></select>
+    <select id="state" name="state" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4"></select>
+    <select id="city" name="city" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none mt-4"></select>
   </div>
-  ...
+
   <div class="flex justify-between">
     <a href="/employees" class="px-5 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition">Cancel</a>
     <button type="submit" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition">Update</button>
