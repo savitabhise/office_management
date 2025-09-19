@@ -1,56 +1,54 @@
-<h1 class="text-2xl font-bold mb-4">Add Employee</h1>
+<h1 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" data-aos="fade-down">
+  Add Employee
+</h1>
 
-<form action="/employees" method="POST" class="space-y-4">
+<form action="/employees" method="POST" class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow space-y-6" data-aos="fade-up">
   <div>
-    <label class="block">Name</label>
-    <input type="text" name="name" required class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Name</label>
+    <input type="text" name="name" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
   </div>
-
   <div>
-    <label class="block">Email</label>
-    <input type="email" name="email" required class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Email</label>
+    <input type="email" name="email" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
   </div>
-
   <div>
-    <label class="block">Job Title</label>
-    <input type="text" name="jobTitle" class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Job Title</label>
+    <input type="text" name="jobTitle" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
   </div>
-
   <div>
-    <label class="block">Department</label>
-    <select name="department" required class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Department</label>
+    <select name="department" required class="w-full border rounded-lg px-3 py-2">
       <% departments.forEach(d => { %>
         <option value="<%= d._id %>"><%= d.name %></option>
       <% }) %>
     </select>
   </div>
-
   <div>
-    <label class="block">Supervisor</label>
-    <select name="supervisor" class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Supervisor</label>
+    <select name="supervisor" class="w-full border rounded-lg px-3 py-2">
       <option value="">-- None --</option>
-      <% employeesList.forEach(e => { %>
-        <option value="<%= e._id %>"><%= e.name %></option>
+      <% employeesList.forEach(emp => { %>
+        <option value="<%= emp._id %>"><%= emp.name %></option>
       <% }) %>
     </select>
   </div>
-
-  <!-- Country / State / City -->
   <div>
-    <label class="block">Country</label>
-    <select id="country" name="country" class="border px-2 py-1 w-full"></select>
+    <label class="block mb-2 font-semibold">Country</label>
+    <select id="country" name="country" class="w-full border rounded-lg px-3 py-2"></select>
   </div>
   <div>
-    <label class="block">State</label>
-    <select id="state" name="state" class="border px-2 py-1 w-full"></select>
+    <label class="block mb-2 font-semibold">State</label>
+    <select id="state" name="state" class="w-full border rounded-lg px-3 py-2"></select>
   </div>
   <div>
-    <label class="block">City</label>
-    <select id="city" name="city" class="border px-2 py-1 w-full"></select>
+    <label class="block mb-2 font-semibold">City</label>
+    <select id="city" name="city" class="w-full border rounded-lg px-3 py-2"></select>
   </div>
 
-  <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded">Save</button>
-  <a href="/employees" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</a>
+  <div class="flex justify-between">
+    <a href="/employees" class="px-5 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition">Cancel</a>
+    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition">Save</button>
+  </div>
 </form>
 
 <script src="/js/location-dropdowns.js"></script>

@@ -1,39 +1,27 @@
-<h1 class="text-2xl font-bold mb-4">Employee Details</h1>
+<h1 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" data-aos="fade-down">
+  Employee Details
+</h1>
 
-<div class="bg-white shadow rounded p-6 space-y-4">
-  <div>
-    <strong>Name:</strong> <%= employee.name %>
-  </div>
-  <div>
-    <strong>Email:</strong> <%= employee.email %>
-  </div>
-  <div>
-    <strong>Job Title:</strong> <%= employee.jobTitle || 'N/A' %>
-  </div>
-  <div>
-    <strong>Department:</strong> <%= employee.department ? employee.department.name : 'N/A' %>
-  </div>
-  <div>
-    <strong>Supervisor:</strong> <%= employee.supervisor ? employee.supervisor.name : 'N/A' %>
-  </div>
-  <div>
-    <strong>Country:</strong> <%= employee.country || 'N/A' %>
-  </div>
-  <div>
-    <strong>State:</strong> <%= employee.state || 'N/A' %>
-  </div>
-  <div>
-    <strong>City:</strong> <%= employee.city || 'N/A' %>
-  </div>
-</div>
+<div class="max-w-lg mx-auto bg-white rounded-xl shadow-lg p-8 space-y-4" data-aos="fade-up">
+  <h2 class="text-2xl font-bold mb-2"><%= employee.name %></h2>
+  <p class="text-gray-600"><strong>Email:</strong> <%= employee.email %></p>
+  <p class="text-gray-600"><strong>Job Title:</strong> <%= employee.jobTitle || 'N/A' %></p>
+  <p class="text-gray-600"><strong>Department:</strong> <%= employee.department ? employee.department.name : 'N/A' %></p>
+  <p class="text-gray-600"><strong>Supervisor:</strong> <%= employee.supervisor ? employee.supervisor.name : 'N/A' %></p>
+  <p class="text-gray-600"><strong>Location:</strong> <%= employee.city %>, <%= employee.state %>, <%= employee.country %></p>
 
-<div class="mt-6 space-x-2">
-  <a href="/employees/<%= employee._id %>/edit" class="bg-yellow-500 text-white px-4 py-2 rounded">Edit</a>
-
-  <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST" style="display:inline">
-    <button type="submit" class="bg-red-500 text-white px-4 py-2 rounded"
-      onclick="return confirm('Are you sure you want to delete this employee?')">Delete</button>
-  </form>
-
-  <a href="/employees" class="bg-gray-400 text-white px-4 py-2 rounded">Back to Employees</a>
+  <div class="mt-6 flex space-x-4 text-gray-600">
+    <a href="/employees/<%= employee._id %>/edit" class="hover:text-yellow-600 transition">
+      <i data-lucide="pencil"></i>
+    </a>
+    <form action="/employees/<%= employee._id %>?_method=DELETE" method="POST" class="inline">
+      <button type="submit" class="hover:text-red-600 transition"
+        onclick="return confirm('Delete this employee?')">
+        <i data-lucide="trash-2"></i>
+      </button>
+    </form>
+    <a href="/employees" class="hover:text-blue-600 transition">
+      <i class="lucide lucide-arrow-left-circle"></i>
+    </a>
+  </div>
 </div>

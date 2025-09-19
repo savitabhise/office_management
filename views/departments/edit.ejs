@@ -1,17 +1,18 @@
+<h1 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" data-aos="fade-down">
+  Edit Department
+</h1>
 
-<h1 class="text-2xl font-bold mb-4">Edit Department</h1>
-
-<form action="/departments/<%= department._id %>?_method=PUT" method="POST" class="space-y-4">
+<form action="/departments/<%= department._id %>?_method=PUT" method="POST" class="max-w-lg mx-auto bg-white p-8 rounded-xl shadow space-y-6" data-aos="fade-up">
   <div>
-    <label class="block">Name</label>
-    <input type="text" name="name" value="<%= department.name %>" required class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Department Name</label>
+    <input type="text" name="name" value="<%= department.name %>" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
   </div>
-
   <div>
-    <label class="block">Description</label>
-    <textarea name="description" rows="3" class="border px-2 py-1 w-full"><%= department.description %></textarea>
+    <label class="block mb-2 font-semibold">Description</label>
+    <textarea name="description" rows="3" class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none"><%= department.description %></textarea>
   </div>
-
-  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
-  <a href="/departments" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</a>
+  <div class="flex justify-between">
+    <a href="/departments" class="px-5 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition">Cancel</a>
+    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition">Update</button>
+  </div>
 </form>

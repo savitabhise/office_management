@@ -1,61 +1,18 @@
-<h1 class="text-2xl font-bold mb-4">Edit Employee</h1>
+<h1 class="text-3xl font-bold mb-8 text-center bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent" data-aos="fade-down">
+  Edit Employee
+</h1>
 
-<form action="/employees/<%= employee._id %>?_method=PUT" method="POST" class="space-y-4">
+<form action="/employees/<%= employee._id %>?_method=PUT" method="POST" class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow space-y-6" data-aos="fade-up">
+  <!-- Same inputs as new.ejs, just with value="<%= employee.field %>" -->
   <div>
-    <label class="block">Name</label>
-    <input type="text" name="name" value="<%= employee.name %>" required class="border px-2 py-1 w-full">
+    <label class="block mb-2 font-semibold">Name</label>
+    <input type="text" name="name" value="<%= employee.name %>" required class="w-full border rounded-lg px-3 py-2 focus:ring-2 focus:ring-purple-500 outline-none">
   </div>
-
-  <div>
-    <label class="block">Email</label>
-    <input type="email" name="email" value="<%= employee.email %>" required class="border px-2 py-1 w-full">
+  ...
+  <div class="flex justify-between">
+    <a href="/employees" class="px-5 py-2 bg-gray-400 text-white rounded-lg hover:bg-gray-500 transition">Cancel</a>
+    <button type="submit" class="px-5 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg shadow hover:opacity-90 transition">Update</button>
   </div>
-
-  <div>
-    <label class="block">Job Title</label>
-    <input type="text" name="jobTitle" value="<%= employee.jobTitle %>" class="border px-2 py-1 w-full">
-  </div>
-
-  <div>
-    <label class="block">Department</label>
-    <select name="department" required class="border px-2 py-1 w-full">
-      <% departments.forEach(d => { %>
-        <option value="<%= d._id %>" <%= employee.department.equals(d._id) ? 'selected' : '' %>>
-          <%= d.name %>
-        </option>
-      <% }) %>
-    </select>
-  </div>
-
-  <div>
-    <label class="block">Supervisor</label>
-    <select name="supervisor" class="border px-2 py-1 w-full">
-      <option value="">-- None --</option>
-      <% employeesList.forEach(e => { 
-           if (!employee._id.equals(e._id)) { %>
-        <option value="<%= e._id %>" <%= employee.supervisor && employee.supervisor.equals(e._id) ? 'selected' : '' %>>
-          <%= e.name %>
-        </option>
-      <% } }) %>
-    </select>
-  </div>
-
-  <!-- Country / State / City -->
-  <div>
-    <label class="block">Country</label>
-    <select id="country" name="country" data-selected="<%= employee.country %>" class="border px-2 py-1 w-full"></select>
-  </div>
-  <div>
-    <label class="block">State</label>
-    <select id="state" name="state" data-selected="<%= employee.state %>" class="border px-2 py-1 w-full"></select>
-  </div>
-  <div>
-    <label class="block">City</label>
-    <select id="city" name="city" data-selected="<%= employee.city %>" class="border px-2 py-1 w-full"></select>
-  </div>
-
-  <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
-  <a href="/employees" class="bg-gray-400 text-white px-4 py-2 rounded">Cancel</a>
 </form>
 
 <script src="/js/location-dropdowns.js"></script>
